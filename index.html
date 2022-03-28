@@ -10,11 +10,11 @@
 <div class="social ">
 
 	<div class="  dropdown dropdown-1">
-		<div class="dropdown-1">
-			<div class="dws-button dws-exit select ">
+		<div class="dropdown-1"  id="clickme">
+			<div class="dws-button dws-exit select " id = 'elem'>
 				<div class="dws-share"><i class="fa  fa-chevron-down" aria-hidden="true"></i></div></div>
 		</div>
-		<ul class=" dropdown-menu  ">
+		<ul class=" dropdown-menu  " id="cart">
 			<div class="dropdown-1">
 				<li >
 					<div class="dws-button dws-viber"><a href="https://viber.click/79104989847" target="_blank">
@@ -40,10 +40,24 @@
 </div>
 
 </body>
-<!--<script src="https://kit.fontawesome.com/e7c810dfd2.js" crossorigin="anonymous"></script>-->
 <script>
-	$('.select').click(function () {
-		$('.dropdown-menu').slideToggle(300);
-	});
+	$(function(){
+		var $cart = $('#cart');
 
+		$('#clickme').click(function(e) {
+			e.stopPropagation();
+
+			if ($cart.is(":hidden")) {
+				$cart.slideDown("slow");
+			} else {
+				$cart.slideUp("slow");
+			}
+		});
+
+	});
+	$(function(){
+		$('#elem').on('click', function(){
+			$(this).toggleClass('transform');
+		});
+	});
 </script>

@@ -38,6 +38,7 @@ a i.fa-brands{
  text-align: center;
  display: block;
  transition: all 0.5s;
+ transform: rotate(180deg);
 }
 .dws-share{
  float: left;
@@ -129,13 +130,19 @@ ul {
  position: absolute;
  left: 0;
  overflow: hidden;
- display: none;
+ /*display: none;*/
  overflow-y: auto;
- z-index: 9;
+ width: 100%;
+ bottom: 100%;
+ box-sizing: content-box;
+ z-index: 2;
 
 }
 .fa-viber {
  font-size: 24px;
+}
+#elem.transform {
+ transform: rotate(180deg);
 }
 
 
